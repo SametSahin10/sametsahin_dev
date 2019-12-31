@@ -17,6 +17,8 @@ flutter:
     - assets/
     - assets/works/
   fonts:
-    - family: GoogleSansRegular
+    - family: Quicksand
       fonts:
-        - asset: assets/GoogleSansRegular.ttf
+        - asset: assets/Quicksand-Light.ttf
+        - asset: assets/Quicksand-Medium.ttf
+        - asset: assets/Quicksand-Regular.ttf
