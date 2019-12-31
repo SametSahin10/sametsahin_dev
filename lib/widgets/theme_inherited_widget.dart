@@ -11,7 +11,7 @@ class ThemeSwitcher extends InheritedWidget {
         super(key: key, child: child);
 
   static _ThemeSwitcherWidgetState of(BuildContext context) {
-    return (context.dependOnInheritedWidgetOfExactType()
+    return (context.inheritFromWidgetOfExactType(ThemeSwitcher)
         as ThemeSwitcher)
           .data;
   }
@@ -31,7 +31,7 @@ class ThemeSwitcherWidget extends StatefulWidget {
   ThemeSwitcherWidget({Key key, this.initialDarkModeOn, this.child})
       : assert(initialDarkModeOn != null),
         assert(child != null),
-        super(key: key)
+        super(key: key);
 
   @override
   _ThemeSwitcherWidgetState createState() => _ThemeSwitcherWidgetState();
