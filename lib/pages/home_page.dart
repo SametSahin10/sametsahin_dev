@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:sametsahin_dev/config/assets.dart';
 import 'package:sametsahin_dev/tabs/about_tab.dart';
 import 'package:sametsahin_dev/tabs/blog_tab.dart';
 import 'package:sametsahin_dev/tabs/projects_tab.dart';
+import 'package:sametsahin_dev/widgets/theme_inherited_widget.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -24,7 +26,17 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        actions: <Widget>[
+          IconButton(
+            icon: ThemeSwitcher.of(context)
+                  .isDarkModeOn ?
+                    Icon(Icons.wb_sunny) :
+                    Image.asset(Assets.moon, height: 20, width: 20),
+            onPressed: () => ThemeSwitcher.of(context).switchDarkMode(),
+          )
+        ],
+      ),
       body: Center(
         child: tabWidgets.elementAt(_selectedIndex),
       ),

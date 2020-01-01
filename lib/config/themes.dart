@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 darkTheme(context) {
   return ThemeData(
-    fontFamily: 'Quicksand-Regular',
+    fontFamily: 'Quicksand',
     primarySwatch: Colors.blue,
     primaryColor: Colors.black,
     accentColor: Colors.blue,
@@ -23,7 +23,7 @@ darkTheme(context) {
 
 lightTheme(context) {
   return ThemeData(
-    fontFamily: 'Quicksand-Regular',
+    fontFamily: 'Quicksand',
     primarySwatch: Colors.blue,
     primaryColor: Colors.white,
     accentColor: Colors.blue,
