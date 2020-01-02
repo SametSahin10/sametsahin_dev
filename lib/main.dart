@@ -20,7 +20,7 @@ class SametSahin extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Samet Sahin',
+      title: 'Samet Şahin',
       theme: ThemeSwitcher.of(context)
           .isDarkModeOn ? darkTheme(context) : lightTheme(context),
       home: HomePage(),

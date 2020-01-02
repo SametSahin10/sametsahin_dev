@@ -11,7 +11,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int _selectedIndex = 0;
   static List<Widget> tabWidgets = <Widget>[
     AboutTab(),
     BlogTab(),
@@ -25,39 +24,41 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        actions: <Widget>[
-          IconButton(
-            icon: ThemeSwitcher.of(context)
-                  .isDarkModeOn ?
-                    Icon(Icons.wb_sunny) :
-                    Image.asset(Assets.moon, height: 20, width: 20),
-            onPressed: () => ThemeSwitcher.of(context).switchDarkMode(),
-          )
-        ],
-      ),
-      body: Center(
-        child: tabWidgets.elementAt(_selectedIndex),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.account_circle),
-            title: Text("About"),
+    return DefaultTabController(
+      length: 3,
+      child: Scaffold(
+        appBar: AppBar(
+          actions: <Widget>[
+            IconButton(
+              icon: ThemeSwitcher.of(context)
+                    .isDarkModeOn ?
+                      Icon(Icons.wb_sunny) :
+                      Image.asset(Assets.moon, height: 20, width: 20),
+              onPressed: () => ThemeSwitcher.of(context).switchDarkMode(),
+            )
+          ],
+          bottom: TabBar(
+            isScrollable: true,
+            indicatorSize: TabBarIndicatorSize.label,
+            indicatorWeight: 1,
+            indicatorColor: Colors.black,
+            labelPadding: EdgeInsets.symmetric(horizontal: 30),
+            tabs: <Widget>[
+              Tab(
+                text: 'About Me',
+              ),
+              Tab(
+                text: 'Blog',
+              ),
+              Tab(
+                text: 'Projects',
+              ),
+            ],
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.chrome_reader_mode),
-            title: Text("Blog"),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.mobile_screen_share),
-            title: Text("Projects"),
-          )
-        ],
-        currentIndex: _selectedIndex,
-        onTap: (index) => setState(() => _selectedIndex = index),
-        selectedItemColor: Theme.of(context).accentColor,
+        ),
+        body: TabBarView(
+          children: tabWidgets,
+        )
       ),
     );
   }
