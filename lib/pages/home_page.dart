@@ -41,7 +41,6 @@ class _HomePageState extends State<HomePage> {
             isScrollable: true,
             indicatorSize: TabBarIndicatorSize.label,
             indicatorWeight: 1,
-            indicatorColor: Colors.black,
             labelPadding: EdgeInsets.symmetric(horizontal: 30),
             tabs: <Widget>[
               Tab(

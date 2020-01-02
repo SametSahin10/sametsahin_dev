@@ -10,6 +10,7 @@ darkTheme(context) {
     cardColor: Color(0xff1f2124),
     canvasColor: Colors.black,
     brightness: Brightness.dark,
+    indicatorColor: Colors.white,
     buttonTheme: Theme.of(context).buttonTheme.copyWith(
       colorScheme: ColorScheme.dark(),
       buttonColor: Colors.blue,
@@ -31,6 +32,7 @@ lightTheme(context) {
     cardColor: Colors.white,
     canvasColor: Colors.white,
     brightness: Brightness.light,
+    indicatorColor: Colors.black,
     buttonTheme: Theme.of(context).buttonTheme.copyWith(
         colorScheme: ColorScheme.light(),
         buttonColor: Colors.blue,
