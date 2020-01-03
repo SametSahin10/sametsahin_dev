@@ -6,8 +6,9 @@ class ProjectsTab extends StatelessWidget {
     return Center(
       child: Text(
         'Projects are on the way...',
+        textAlign: TextAlign.center,
         style: TextStyle(
-            fontSize: 24
+          fontSize: 24
         ),
       ),
     );

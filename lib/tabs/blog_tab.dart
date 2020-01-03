@@ -6,8 +6,9 @@ class BlogTab extends StatelessWidget {
     return Center(
       child: Text(
         'Mind blowing blog posts are coming soon...',
+        textAlign: TextAlign.center,
         style: TextStyle(
-          fontSize: 24
+          fontSize: 24,
         ),
       ),
     );
